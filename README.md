@@ -1,12 +1,40 @@
-# React + Vite
+# 🌾 Agricultural Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, modern dashboard for managing agricultural data and insights.  
+Built with **React**, this project provides visualizations and management tools to support smart farming and agricultural monitoring.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 📊 Visualize crop and weather data
+- 🌦️ Weather integration (OpenWeatherMap)
+- 📁 Modular React components
+- 💡 Simple, clean UI with reusable cards and charts
+- 📱 Responsive design for both desktop and mobile
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + Vite
+- **Styling:** CSS 
+- **APIs:** OpenWeatherMap API 
+- **Icons:** React Icons / Lucide
+- **Version Control:** Git + GitHub
+
+---
+
+
+---
+
+## 📦 Installation
+
+Clone the project and install dependencies:
+
+```bash
+git clone https://github.com/Emmanuela-dev/agricultural-dashboard.git
+cd agricultural-dashboard
+npm install
+npm run dev
+
