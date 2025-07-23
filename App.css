@@ -1,0 +1,334 @@
+/* --- Global Styles & Theme Variables --- */
+:root {
+  --font-family: 'Inter', sans-serif;
+  --bg-light: #F9FAFB;
+  --bg-dark: #111827;
+  --card-bg-light: #FFFFFF;
+  --card-bg-dark: #1F2937;
+  --text-primary-light: #111827;
+  --text-primary-dark: #F9FAFB;
+  --text-secondary-light: #6B7280;
+  --text-secondary-dark: #9CA3AF;
+  --border-light: #E5E7EB;
+  --border-dark: #374151;
+  --accent-color: #16A34A; /* Green accent */
+  --accent-color-dark: #22C55E;
+  --success-color: #16A34A;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  background-color: var(--bg-light);
+  color: var(--text-primary-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary-dark);
+}
+
+/* --- Main Layout & Header --- */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.dark .header {
+  border-bottom-color: var(--border-dark);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary-light);
+}
+.dark .header-brand {
+  color: var(--text-primary-dark);
+}
+.header-brand .icon {
+  color: var(--accent-color);
+}
+.dark .header-brand .icon {
+  color: var(--accent-color-dark);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-light);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary-light);
+}
+.dark .theme-toggle {
+  border-color: var(--border-dark);
+  color: var(--text-secondary-dark);
+}
+.theme-toggle:hover {
+  background-color: #F3F4F6;
+}
+.dark .theme-toggle:hover {
+  background-color: #374151;
+}
+
+/* --- Welcome Banner --- */
+.welcome-banner {
+  padding: 2rem;
+  background-color: #DCFCE7; /* Light green background */
+  border: 1px solid #A7F3D0;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+}
+.dark .welcome-banner {
+  background-color: #166534;
+  border-color: #34D399;
+}
+.welcome-banner h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #14532D;
+}
+.dark .welcome-banner h1 {
+  color: #DCFCE7;
+}
+.welcome-banner p {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  color: #166534;
+}
+.dark .welcome-banner p {
+  color: #A7F3D0;
+}
+
+
+/* --- Main Grid Layout --- */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .main-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Base Card Style --- */
+.card {
+  background-color: var(--card-bg-light);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+.dark .card {
+  background-color: var(--card-bg-dark);
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-primary-light);
+}
+.dark .card-title {
+  color: var(--text-primary-dark);
+}
+.card-title .icon {
+  color: var(--accent-color);
+}
+.dark .card-title .icon {
+  color: var(--accent-color-dark);
+}
+
+/* --- Weather Widget --- */
+.weather-widget {
+  grid-column: 1 / -1; /* Span full width on mobile */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #60A5FA, #3B82F6); /* Blue gradient */
+  color: #EFF6FF;
+}
+.dark .weather-widget {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  color: #DBEAFE;
+}
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.weather-main .icon {
+  width: 5rem;
+  height: 5rem;
+}
+.weather-temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.weather-desc {
+  font-size: 1.25rem;
+  margin: 0;
+}
+.weather-details {
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .weather-widget {
+    grid-column: span 1;
+  }
+}
+
+/* --- Crop Performance Card --- */
+.crop-performance-card {
+  grid-column: 1 / -1;
+}
+.crop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.crop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.75rem;
+}
+.dark .crop-item {
+  border-color: var(--border-dark);
+}
+.crop-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.crop-icon {
+  font-size: 1.5rem;
+}
+.crop-name {
+  font-weight: 500;
+  color: var(--text-primary-light);
+}
+.dark .crop-name {
+  color: var(--text-primary-dark);
+}
+.crop-yield {
+  font-size: 0.875rem;
+  color: var(--text-secondary-light);
+}
+.dark .crop-yield {
+  color: var(--text-secondary-dark);
+}
+.crop-profit {
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+@media (min-width: 768px) {
+  .crop-performance-card {
+    grid-column: span 1;
+  }
+}
+
+/* --- Task List Card --- */
+.task-list-card {
+  grid-column: 1 / -1;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.task-item:hover {
+  background-color: #F3F4F6;
+}
+.dark .task-item:hover {
+  background-color: #374151;
+}
+.task-item.completed span {
+  text-decoration: line-through;
+  color: var(--text-secondary-light);
+}
+.dark .task-item.completed span {
+  color: var(--text-secondary-dark);
+}
+.task-item .icon {
+  color: #F97316; /* Orange for incomplete tasks */
+}
+.dark .task-item .icon {
+  color: #FB923C;
+}
+.task-item.completed .icon {
+  color: var(--success-color);
+}
+
+@media (min-width: 768px) {
+  .task-list-card {
+    grid-column: span 1;
+  }
+}
+
+/* --- Profit Trend Chart --- */
+.profit-chart-card {
+  grid-column: 1 / -1;
+}
+@media (min-width: 1024px) {
+  .profit-chart-card {
+    grid-column: span 3;
+  }
+}
+.chart-container {
+  height: 300px;
+  margin-left: -1.5rem; /* Offset for recharts padding */
+}

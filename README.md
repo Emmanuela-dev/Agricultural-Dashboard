@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌾 Agricultural Dashboard
 
 A responsive, modern dashboard for managing agricultural data and insights.  
@@ -37,4 +38,5 @@ git clone https://github.com/Emmanuela-dev/agricultural-dashboard.git
 cd agricultural-dashboard
 npm install
 npm run dev
+
 
